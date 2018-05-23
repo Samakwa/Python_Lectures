@@ -1,0 +1,71 @@
+#Compute holiday pay of a company’s staff members, for dufferent cadres. Refer to Readme
+
+def compute_HolsPay():
+    basic_pay = 2000.0
+
+    level = input (" Please enter M for management, S for Senior, or J for Junior: ")
+    if level == 'M':
+        basic_sal = float(input("Enter management's basic salary: "))
+        pay = (0.15 * basic_sal) + basic_pay +basic_sal
+        return pay
+
+    elif level == 'S':
+        basic_sal = float(input("Enter Senior Cadre's basic salary: "))
+        pay = (0.10 * basic_sal) + basic_pay + basic_sal
+        return pay
+
+    elif level == 'J':
+        basic_sal = float(input("Enter Junior Cadre's basic salary: "))
+        pay = (0.05 * basic_sal) + basic_pay + basic_sal
+        return pay
+
+    else:
+        return"Wrong input."
+
+print(compute_HolsPay())
+
+
+def compare_temp(today):
+    Spr_Avg = 68
+    Sum_Avg = 95
+    Fa_Avg = 72
+    Win_Avg = 42
+
+    season = input (" Please enter S for spring, P for Summer, F for fall and W for Winter: ")
+
+    if season == 'S':
+        if (today - Sum_Avg > 5):
+            return "It is hotter than usual."
+        elif (today- Sum_Avg < -5):
+            return "It is colder than usual." 
+        else:
+            return "The weather looks normal."
+
+    elif season == 'P':
+        if (today - Spr_Avg > 5):
+            return "It is hotter than usual." 
+        elif (today- Spr_Avg < -5):
+            return "It is colder than usual." 
+        else:
+            return "The weather looks normal." 
+
+    elif season == 'F':
+        if (today - Fa_Avg > 5):
+            return"It is hotter than usual."
+        elif (today- Fa_Avg < -5):
+            return "It is colder than usual." 
+        else:
+            return "The weather looks normal."
+
+    elif season == 'W':
+        if (today - Win_Avg > 5):
+            return "It is hotter than usual."
+        elif (today - Win_Avg < -5):
+            return"It is colder than usual."
+        else:
+            return "The weather looks normal."
+    else:
+        return"Wrong Season."
+
+print(compare_temp(70))
+
