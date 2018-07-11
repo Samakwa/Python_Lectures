@@ -1,0 +1,73 @@
+"""
+Using a While loop, write a program to automate withdrawal and deposit processes in a bank. Assume Minimum Saving balance  = $2000 and Minimum Checking Balance =$250. Initialize current Saving Balance and Checking Balance = 0. Ask user the type of account,  using “C” and “S”. Inform user to enter a negative amount for withdrawal and a positive amount for deposit.
+(a)	If the account is checking,:
+(i)	If the amount is negative and  sum of Minimum balance and absolute amount is greater  than  current balance, deny the transaction and inform the user 
+(ii)	Otherwise (else), increment the current balance with the deposit amount
+Print out the available Checking balance, which is the sum of the current Checking balance and the minimum allowed balance.
+(a)	If the account is Saving,:
+(i)	If the amount is negative and  sum of Minimum balance and absolute amount is greater  than  current balance, deny the transaction and inform the user 
+(ii)	Otherwise (else), increment the current balance with the deposit amount
+Print out the available Saving balance, which is the sum of the current Saving balance and the minimum allowed balance.
+(a)	Otherwise (else), inform the user of wrong account selection.
+As part of the looping, ask user if the want to try again or another transaction. If the response is yes, break  off and start from the beginning. Otherwise, continue and finish the program.
+"""
+from math import*
+import sys
+Min_bal_Chk = 250.0
+Min_bal_Sav = 2000.0
+
+Curr_bal_Chk = 0.0
+Curr_bal_Sav = 0.0
+allowed_bal = 0.0
+
+while True:
+
+    acct = input (" Please S for savings and C for Checking: ")
+    transaction_type = input ("Enter W for withdrawal or D for Deposit: ")
+    amount = int(input ("Please enter amount for withdrawal or deposit: "))
+
+    if acct == 'S':
+        if (transaction_type == "W" ):
+            bal = allowed_bal + Curr_bal_Sav + Min_bal_Sav
+            if bal < (Min_bal_Sav + abs(amount) ):
+                print("Cannot withdraw. Over the limit.")
+
+            else:
+                print ("Withdrawal successfully completed")
+                allowed_bal = (bal - amount ) - Min_bal_Sav
+                bal = allowed_bal + Min_bal_Sav
+                print ("Total Balance=$", bal)
+                print("Balance  = $",allowed_bal)  
+        else:
+            allowed_bal = Curr_bal_Sav + amount
+            print( "Deposit Successfully completed")
+            print("Total Savings Balance = $", allowed_bal + Min_bal_Sav)
+            print (" Available for withdrawal = $", allowed_bal)
+
+    elif acct == 'C':
+        if (transaction_type == "W" ):
+            bal = allowed_bal + Curr_bal_Chk + Min_bal_Chk
+            if bal < (Min_bal_Chk + abs(amount) ):
+                print("Cannot withdraw. Over the limit.")
+
+            else:
+                print ("Withdrawal successfully completed")
+                allowed_bal = (bal - amount ) - Min_bal_Chk
+                bal = allowed_bal + Min_bal_Chk
+                print ("Total Balance=$", bal)
+                print("Balance  = $",allowed_bal)  
+        else:
+            allowed_bal = Curr_bal_Chk + amount
+            print( "Deposit Successfully completed")
+            print("Total Savings Balance = $", allowed_bal + Min_bal_Chk)
+            print (" Available for withdrawal = $", allowed_bal)
+    else:
+        print("Wrong Account type entered.")
+
+    resp = input("Do you want to try again? Enter Y to continue: ")
+    if resp != "Y" and (resp != "y"):
+        break
+    else:
+        continue
+
+print ("Thanks you! See you next time")
