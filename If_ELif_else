@@ -1,0 +1,57 @@
+
+"""
+Write a program to compute possible amount available to a student from a university academic excellence scholarship fund 
+for undergraduates. There are 4 categories of students: Senior gets 37%, Junior gets 24%, Sophomore get 26% while Freshmen gets 33% of 
+the Fund’s amount. Ask user to enter their CGPA. If the CGPA is above 3.5, a 15% is used. 10% and 5% are used for students whose grades
+are above 2.4 (but less than 3.5) and below, respectively. The amount available to any student is the product of the student’s CGPA, 
+the rate for grade and the percentage of the pool available to that student’s category.              
+"""
+
+
+fund = 100000.0
+
+level = input (" Please S for Senior, or J for Junior, SH for Sophomore or F for Freshmen: ")
+CGPA = float(input("Enter your grade: "))
+
+if level == 'S':
+    if CGPA >= 3.5:
+        pay = (0.37 * fund)* 0.15 *  CGPA
+        print ( "Your scholarship amount is ", pay)
+    elif CGPA > 2.4 and CGPA < 3.5:
+        pay = (0.24 * fund) * 0.10 * CGPA
+        print("Your scholarship amount is ", pay)
+    else:
+        pay = (0.26 * fund) * 0.05 * CGPA
+        print("Your scholarship amount is ", pay)
+elif level == 'J':
+    if CGPA >= 3.5:
+        pay = (0.33 * fund)* 0.15 *  CGPA
+        print ( "Your scholarship amount is ", pay)
+    elif CGPA > 2.4 and CGPA < 3.5:
+        pay = (0.37 * fund) * 0.10 * CGPA
+        print("Your scholarship amount is ", pay)
+    else:
+        pay = (0.37 * fund) * 0.05 * CGPA
+        print("Your scholarship amount is ", pay)
+elif level == 'SH':
+    if CGPA >= 3.5:
+        pay = (0.37 * fund)* 0.15 *  CGPA
+        print ( "Your scholarship amount is ", pay)
+    elif CGPA > 2.4 and CGPA < 3.5:
+        pay = (0.37 * fund) * 0.10 * CGPA
+        print("Your scholarship amount is ", pay)
+    else:
+        pay = (0.37 * fund) * 0.05 * CGPA
+        print("Your scholarship amount is ", pay)
+elif level == 'F':
+    if CGPA >= 3.5:
+        pay = (0.37 * fund)* 0.15 *  CGPA
+        print ( "Your scholarship amount is ", pay)
+    elif CGPA > 2.4 and CGPA < 3.5:
+        pay = (0.37 * fund) * 0.10 * CGPA
+        print("Your scholarship amount is ", pay)
+    else:
+        pay = (0.37 * fund) * 0.05 * CGPA
+        print("Your scholarship amount is ", pay)
+else:
+    print ("Wrong input")
