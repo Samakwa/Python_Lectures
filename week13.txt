@@ -1,0 +1,3 @@
+Python is an interesting language. 
+It contains robust, yet easy to understand syntax .  
+It contains robust, yet easy to understand syntax .

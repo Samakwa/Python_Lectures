@@ -1,0 +1,15 @@
+This is a text file!
+Different data types are represented here!
+Strings
+Numbers
+List
+Tuple
+Set
+Dictionary
+Int, Float and Complex are part of Numbers  
+ Another popular programming language is Java 
+. Both have large areas of application 
+. While Java is Static in typing, Python is dynamic 
+ Another popular programming language is Java 
+. Both have large areas of application 
+. While Java is Static in typing, Python is dynamic
