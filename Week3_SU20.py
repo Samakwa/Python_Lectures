@@ -22,7 +22,7 @@ d_miles = d_ft / 5280.0
 print("The distance in inches is %i inches." % d_inches)
 print("The distance in yards is %.2f yards." % d_yards)
 print("The distance in miles is %.2f miles." % d_miles)
-"""
+
 
 
 from datetime import datetime, timedelta, date
@@ -35,6 +35,16 @@ future_date_after_2yrs = (date_today + timedelta(days=730)).strftime("%y-%m-%d")
 # printing calculated future_dates
 print('future_date_after_2yrs:', str(future_date_after_2yrs))
 
+#calculating number of days before next event
+from datetime import datetime, timedelta, date, time
+
+today = date.today()
+future = date(2021,5,20)
+str(future - today)
+
+print((future - today).days)
+
+
 #Calculate number of days before future event
 future_date= date(2020, 12,2)
 today_ = datetime.today().strftime("%y, %m, %d")
@@ -46,3 +56,23 @@ difference = future - today_
 print(difference)
 
 print('There are', difference,' days before next conference:')
+
+marks = int(input("Enter the score: "))
+
+if (marks>80):
+   print("Grade A")
+elif (marks >60) and (marks<=80):
+   print ("Grade B")
+elif (marks>40) and (marks <=60):
+   print ("Grade C")
+else:
+   print ("Grade D")
+
+
+x = input("Enter a number: ")
+
+if x.isdigit():
+    print("Inputs are numbers...")
+else:
+    print("Wrong input")
+"""
